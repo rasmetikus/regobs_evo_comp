@@ -665,7 +665,15 @@ def fix_pro_metadata(input_path: str, output_dir: str, metadata=None):
     base = filename.replace(".pro", "")
 
     if not metadata:
-        # Parse filename
+        metadata = {
+            "StationName": None,
+            "Latitude": None,
+            "Longitude": None,
+            "Altitude": None,
+            "SlopeAngle": None,
+            "SlopeAzi": None,
+        }
+        # Parse filename only when metadata wasn't supplied
         region_str, height_str, aspect = base.split("_")
         region = int(region_str)
         h1, h2 = map(int, height_str.split("-"))
