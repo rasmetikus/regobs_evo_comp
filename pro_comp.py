@@ -1210,7 +1210,7 @@ def plot_regobs_and_pros_tmp(regobs_list: List[Any],
                                 figsize: Optional[Tuple[int, int]] = None,
                                 sharex: bool = True,
                                 suptitle: Optional[str] = None,
-                                marker = "x",
+                                marker_pro = "x",
                                 custom_name = [],
                                 ) -> Tuple[plt.Figure, List[plt.Axes]]:
     """
@@ -1224,7 +1224,7 @@ def plot_regobs_and_pros_tmp(regobs_list: List[Any],
     - figsize: optional figure size; if None it's computed from number of subplots
     - sharex: whether subplots share the x-axis (default True)
     - suptitle: optional figure title
-    - marker: string be passed on to the plotting functions
+    - marker: string be passed on to the pro plotting function, for the regobs marker is always set to "x"
     - custom_name: list with custom names for the .pro plot titles
 
     Returns (fig, axes_list) where axes_list[0] is the regobs Axes and subsequent entries are .pro Axes in the same order as pro_sources.
@@ -1245,12 +1245,12 @@ def plot_regobs_and_pros_tmp(regobs_list: List[Any],
 
     ax_regobs = axes[0]
     # Plot regobs on the top axis
-    plot_regobs_min_max(regobs_list, ax=ax_regobs, date_parser=date_parser, marker=marker)
+    plot_regobs_min_max(regobs_list, ax=ax_regobs, date_parser=date_parser, marker="x")
 
     pro_axes = []
     for i, src in enumerate(pro_sources):
         ax = axes[i + 1]
-        plot_pro_min_max(src, from_file=from_file, ax=ax, date_parser=date_parser, marker=marker, custom_name=(custom_name[i] if custom_name else None))
+        plot_pro_min_max(src, from_file=from_file, ax=ax, date_parser=date_parser, marker=marker_pro, custom_name=(custom_name[i] if custom_name else None))
         pro_axes.append(ax)
 
     # Collect all axes for convenience
