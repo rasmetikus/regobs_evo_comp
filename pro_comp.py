@@ -644,6 +644,7 @@ def fix_pro_metadata(input_path: str, output_dir: str, metadata=None):
     - Aspect = final letter before .pro (F, N, E, S, W)
     - StationName:
         region 1 → aggregated_Stong
+        region 2 -> aggregated_Kalvavatni
         else    → aggregated_<region>
     - Lat/Lon:
         region 1 → 60.9 / 8.1
@@ -1077,7 +1078,7 @@ def plot_regobs_min_max(regobs_list: List[Any],
 
     # Formatting
     #ax.set_xlabel('Date')
-    ax.set_ylabel('Temperature (°C)')
+    ax.set_ylabel('Snow Temperature (°C)')
     ax.set_title("Regobs")
     ax.grid(True, linestyle=':', alpha=0.6)
 
@@ -1179,7 +1180,7 @@ def plot_pro_min_max(pro_source: Union[str, None],
 
     # Setting lables
     #ax.set_xlabel('Date')
-    ax.set_ylabel('Temperature (°C)')
+    ax.set_ylabel('SnowTemperature (°C)')
     
     # Plot title
     # If custom name is parsed choose the custom name
