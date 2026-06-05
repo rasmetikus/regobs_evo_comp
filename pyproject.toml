@@ -1,0 +1,6 @@
+[project]
+name = "regobs_evo_comp"
+version = "0.1.0"
+dependencies = [
+    "snowpacktools @ git+https://gitlab.com/rasmetikus/snowpacktools.git@feature/regobs_evo"
+]

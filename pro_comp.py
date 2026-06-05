@@ -315,9 +315,8 @@ def plot_regobs_evo(results, color_scheme='SARP',
         Fraction of the available gap to use (0 < overlap_margin <= 1). Use <1 to leave small gaps.
     x_date : str
         "obs": shows x-lables only for the acuatlly plotted dates. 
-        "lin": shows x-lables only for the first and 15th of the month.
-        "both_bottom" shows both obs and lin at the bottom x-axis.
-        "both" shows lin on bottom x-axis and obs on top x-axis.
+        "both_bottom" shows both obs and dates at the bottom x-axis.
+        "both" shows date on bottom x-axis and obs on top x-axis.
         "compact" simmilar to both but top axis annotation are rotated (use add_cbar="top", except or multi_5)
         "multi_5" use for combined_regobs_and_multi_snp if 5 .pro files are passed along
     start_date : 
@@ -538,6 +537,16 @@ def plot_regobs_evo(results, color_scheme='SARP',
         HATCHES_GRAIN_TYPE[1:],
         alpha=1,
         x=0.015, y=1.2, width=0.028, height=0.025, spacing=0.092
+        )
+    
+    elif add_cbar == "bottom":
+        pro_helper.add_custom_legend(
+        ax,
+        LABELS_GRAIN_TYPE[1:],
+        COLORS_GRAIN_TYPE[1:],
+        HATCHES_GRAIN_TYPE[1:],
+        alpha=1,
+        x=0.015, y=-0.15 if x_date == "both_bottom" else -0.1, width=0.028, height=0.025, spacing=0.092
         )
 
     # Axes 
