@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from snowpacktools.snowpro import pro_helper, pro_plotter
 import sys
 sys.path.append("/home/ratha/Prof_comps")
-import utils.helper_scripts as hs
-import utils.comp_helper as ch
+import regobs_evo_comp.helper_scripts as hs
+import regobs_evo_comp.comp_helper as ch
 import copy
 from types import SimpleNamespace
 from pathlib import Path
