@@ -1,3 +1,10 @@
+[tool.setuptools]
+packages = [
+    "comp_helper",
+    "helper_scripts",
+    "pro_comp"
+]
+
 [project]
 name = "regobs_evo_comp"
 version = "0.1.0"
