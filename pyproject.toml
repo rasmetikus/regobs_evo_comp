@@ -1,9 +1,6 @@
 [tool.setuptools]
-packages = [
-    "comp_helper",
-    "helper_scripts",
-    "pro_comp"
-]
+py_modules = ["comp_helper", "helper_scripts", "pro_comp"]
+
 
 [project]
 name = "regobs_evo_comp"
