@@ -31,7 +31,7 @@ def get_profiles_from_regobs(lat_range:tuple, lon_range:tuple,
     regions_string =  f"in regions {regions}" if regions is not None else ""
     
     if verbose: 
-        print(f"fetching snow profiles from regobs from {date_start} to {date_end}, within lat/lon range: {lat_range}/{lon_range}, by {observer_string}")
+        print(f"fetching snow profiles from regobs from {date_start} to {date_end}, within lat/lon range: {lat_range}/{lon_range}, {observer_string}")
     
     date_format="%Y-%m-%d"; date_format2="%Y-%m-%dT%H:%M"
     obs_st = datetime.datetime.strptime(date_start, date_format) #(2025, 12, 1, 0, 0, 0, tzinfo=datetime.timezone.utc)
