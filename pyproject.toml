@@ -5,11 +5,15 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "regobs_evo_comp"
 version = "0.1.0"
+description = "RegObs EVO computation tools"
+readme = "README.md"
+requires-python = ">=3.10"
 dependencies = [
     "snowpacktools @ git+https://gitlab.com/rasmetikus/snowpacktools.git@feature/regobs_evo",
     "regobslib",
     "matplotlib"
 ]
 
-[tool.setuptools.dynamic]
-py-modules = { value = ["comp_helper", "helper_scripts", "pro_comp"] }
+[tool.setuptools.packages.find]
+where = ["src"]
+
