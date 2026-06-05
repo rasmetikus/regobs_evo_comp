@@ -1,6 +1,6 @@
-[tool.setuptools]
-py_modules = ["comp_helper", "helper_scripts", "pro_comp"]
-
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "regobs_evo_comp"
@@ -10,3 +10,6 @@ dependencies = [
     "regobslib",
     "matplotlib"
 ]
+
+[tool.setuptools.dynamic]
+py-modules = { value = ["comp_helper", "helper_scripts", "pro_comp"] }
